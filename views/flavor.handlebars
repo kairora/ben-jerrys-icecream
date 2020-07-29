@@ -1,7 +1,14 @@
 <h1>{{name}}</h1>
-<ul>
-    <li><strong>Price:</strong> ${{ price }}</li>
-    <li><strong>Awesomeness:</strong> {{ awesomeness }}</li>
-</ul>
+
+{{#if name}}
+    <ul>
+        <li><strong>Price:</strong> ${{ price }}</li>
+        <li><strong>Awesomeness:</strong> {{ awesomeness }}</li>
+    </ul>
+
+{{else }}
+<h1>Sorry, that flavor's not found!</h1>
+{{/if}}
+
 
 

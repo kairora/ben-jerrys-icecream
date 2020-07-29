@@ -1,4 +1,7 @@
 <div class="jumbotron text-center">
-    <a href="/icecreams"  class="btn btn-primary">View all Ice Creams</a>
-    <a href="/icecreams/jawbreakers"  class="btn btn-primary">View Jawbreakers Flavor</a>
+    <a href="/icecreams"  class="btn btn-primary">View all Ice Cream Flavors</a>
+    <h2>Our Flavors</h2>
+    {{#list icecreams}}
+    <a href="/icecreams/{{name}}">{{ name }}</a>
+    {{/list}}
 </div>

@@ -3,7 +3,9 @@ const exphbs = require("express-handlebars")
 const app = express()
 const PORT = 8080
 
-app.engine("handlebars", exphbs());
+app.engine("handlebars", exphbs({
+    helpers: require("./helpers.js")
+}));
 app.set("view engine", "handlebars");
 
 var icecreams = [
@@ -16,7 +18,7 @@ var icecreams = [
 ];
 
 app.get(`/`, (req, res) => {
-    res.render("index")
+    res.render("index", { icecreams })
 })
 
 app.get(`/icecreams/:name`, (req, res) => {
